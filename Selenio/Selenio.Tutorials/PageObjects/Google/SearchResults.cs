@@ -11,7 +11,7 @@ namespace Selenio.Tests.PageObjects.Google
         public IWebElement Logo { get; set; }
 
         [WaitForThisElement]
-        [FindsBy(How = How.XPath, Using = "//h3[text()='YouTube']")]
+        [FindsBy(How = How.XPath, Using = "//a/h3/div[text()='YouTube']")]
         public IWebElement YouTubeLink { get; set; }
 
         public virtual SearchResults ClickYoutubeLink()

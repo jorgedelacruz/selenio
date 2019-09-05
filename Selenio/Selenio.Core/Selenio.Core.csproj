@@ -64,6 +64,7 @@
     <Compile Include="Reporting\ITestReporter.cs" />
     <Compile Include="SUT\SUTDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebElementMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

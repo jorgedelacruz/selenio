@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using Selenio.Extensions;
 using static Selenio.Core.SUT.SUTDriver;
 
 namespace Selenio.Tests
@@ -56,6 +58,22 @@ namespace Selenio.Tests
                 TutorialDriver.GoogleHomeScreen.Open("http://www.google.com.do");
                 TutorialDriver.GoogleHomeScreen.Search("youtube");
                 throw new System.Exception("Failing the test using an exception...");
+            });
+        }
+
+        [TestMethod]
+        public void SignIn()
+        {
+            RunTest(() =>
+            {
+                Reporter.TestDescription = "Google Sign in";
+
+                TutorialDriver.GoogleHomeScreen.Open("http://www.google.com.do");
+                TutorialDriver.GoogleHomeScreen.SignIn.Click();
+                TutorialDriver.GoogleSignIn.WaitForScreen();
+                TutorialDriver.GoogleSignIn.Username.SendKeys("jcruzz92" + Keys.Enter);
+                TutorialDriver.GoogleSignIn.WaitForElement(TutorialDriver.GoogleSignIn.Password);
+                TutorialDriver.GoogleSignIn.Password.SendKeys("testpassword");
             });
         }
 

@@ -64,6 +64,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PageObjects\Google\GoogleSignIn.cs" />
     <Compile Include="Reporting\ReportSettingsProvider.cs" />
     <Compile Include="SUT\TutorialDriver.cs" />
     <Compile Include="SUT\MasterTestClass.cs" />

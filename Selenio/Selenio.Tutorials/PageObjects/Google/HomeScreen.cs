@@ -14,6 +14,9 @@ namespace Selenio.Tests.PageObjects.Google
         [FindsBy(How = How.Id, Using = "dummy-element")]
         public IWebElement DummyElement { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//a[text()='Sign in']")]
+        public IWebElement SignIn { get; set; }
+
         [WaitForThisElement]
         [FindsBy(How = How.Id, Using = "hplogo")]
         public IWebElement Logo { get; set; }

@@ -19,6 +19,7 @@ namespace Selenio.Tests
         public static HomeScreen GoogleHomeScreen => GetPage<HomeScreen>();
         public static SearchResults GoogleSearchResults => GetPage<SearchResults>();
         public static YouTube YouTubeHomeScreen => GetPage<YouTube>();
+        public static GoogleSignIn GoogleSignIn => GetPage<GoogleSignIn>();
 
     }
 }
