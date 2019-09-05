@@ -85,32 +85,92 @@ namespace Selenio.Core.Proxy
         /// out or ref parameters.</returns>
         public override IMessage Invoke(IMessage msg)
         {
-            var element = Element;
             IMethodCallMessage methodCallMessage = msg as IMethodCallMessage;
 
             var methodInfo = (methodCallMessage.MethodBase as MethodInfo);
 
             string methodName = methodInfo?.GetMethodName();
             string property = methodInfo?.GetPropertyName() ?? methodCallMessage.Args.SerializeArgumentValues();
+            bool reportAction = reporter.Configuration.CanReportElememtAction(methodInfo.Name);
 
-            try
+            return ExecuteAction(() =>
             {
                 var returnValue = (typeof(IWrapsElement).IsAssignableFrom((methodCallMessage.MethodBase as MethodInfo).DeclaringType)) ?
-                    new ReturnMessage(element, null, 0, methodCallMessage.LogicalCallContext, methodCallMessage) :
-                    InvokeMethod(methodCallMessage, element);
+                    new ReturnMessage(Element, null, 0, methodCallMessage.LogicalCallContext, methodCallMessage) :
+                    InvokeMethod(methodCallMessage, Element);
 
                 string outcome = returnValue?.ReturnValue?.GetType().IsValueType() != null ? returnValue.ReturnValue.ToString() : "";
+
+                if (methodName == WebElementMethod.SendKeys && Element.GetAttribute("type").ToLower() == "password")
+                {
+                    property = "●●●●●●●●●●●●●●";
+                }
 
                 if (reporter.Configuration.CanReportElememtAction(methodInfo.Name))
                     reporter.ReportElementAction(Name, methodName, property, outcome, true, "");
 
                 return returnValue;
-            }
-            catch (Exception ex)
+            });
+
+            IMessage ExecuteAction(Func<IMessage> action)
             {
-                if (reporter.Configuration.CanReportElememtAction(methodInfo.Name))
-                    reporter.ReportElementAction(Name, methodName, property, "", false, ex.Message);
-                throw;
+                switch (methodInfo.Name)
+                {
+                    case WebElementMethod.Displayed:
+                        return GetDisplayed(action);
+                    default:
+                        return ExecuteGenericAction(action);
+                }
+            }
+
+            IMessage SendKeys(Func<IMessage> code)
+            {
+                try
+                {
+                    return code.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType() == typeof(TargetInvocationException) && ex.InnerException != null)
+                        ex = ex.InnerException;
+
+                    if (reportAction)
+                        reporter.ReportElementAction(Name, methodName, property, "", false, ex.Message);
+
+                    throw;
+                }
+            }
+
+            IMessage GetDisplayed(Func<IMessage> code)
+            {
+                try
+                {
+                    return code.Invoke();
+                }
+                catch
+                {
+                    if (reportAction)
+                        reporter.ReportElementAction(Name, methodName, property, "False", true, "");
+                    return new ReturnMessage(false, null, 0, methodCallMessage.LogicalCallContext, methodCallMessage);
+                }
+            }
+
+            IMessage ExecuteGenericAction(Func<IMessage> code)
+            {
+                try
+                {
+                    return code.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    if (ex.GetType() == typeof(TargetInvocationException) && ex.InnerException != null)
+                        ex = ex.InnerException;
+
+                    if (reportAction)
+                        reporter.ReportElementAction(Name, methodName, property, "", false, ex.Message);
+
+                    throw;
+                }
             }
         }
     }

@@ -9,13 +9,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This is a straight forward implementation of a simple Selenium framework, designed to promote the use of the Page Object pattern.</description>
     <tags>selenium webdriver page-object-model pom</tags>
+    <projectUrl>https://github.com/jorgedelacruz/selenio</projectUrl>
     <dependencies>
       <dependency id="Selenium.Support" version="3.7.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\Selenio.Core.dll" target="lib\net452\Selenio.Core.dll" />
+    <file src="bin\Release\Selenio.Core.dll" target="lib\net\Selenio.Core.dll" />
   </files>
 </package>
-
-<!--nuget pack Selenio.Core\Selenio.nuspec -OutputDirectory C:\nuget-->
