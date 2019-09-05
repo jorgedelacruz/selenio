@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.Core", "Selenio.Core\Selenio.Core.csproj", "{BA979F26-D404-45BB-9C5E-1317B7D00483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.Extensions", "Selenio.Extensions\Selenio.Extensions.csproj", "{7E66BA6C-8124-4FCF-9E1F-9CD6F9074677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.HtmlReporter", "Selenio.HtmlReporter\Selenio.HtmlReporter.csproj", "{C09F2ACA-462A-48F3-9734-2609E4E8282C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.NUnit", "Selenio.NUnit\Selenio.NUnit.csproj", "{77FB2A47-F8DA-4A06-A59B-2FBE78653F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.PlainTextReporter", "Selenio.PlainTextReporter\Selenio.PlainTextReporter.csproj", "{214ED264-DA92-4815-B2B5-0D2F49C4ACAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenio.Tests", "Selenio.Tutorials\Selenio.Tests.csproj", "{CA013719-BF7C-4AD3-8744-26BF44282560}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA979F26-D404-45BB-9C5E-1317B7D00483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA979F26-D404-45BB-9C5E-1317B7D00483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA979F26-D404-45BB-9C5E-1317B7D00483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA979F26-D404-45BB-9C5E-1317B7D00483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E66BA6C-8124-4FCF-9E1F-9CD6F9074677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E66BA6C-8124-4FCF-9E1F-9CD6F9074677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E66BA6C-8124-4FCF-9E1F-9CD6F9074677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E66BA6C-8124-4FCF-9E1F-9CD6F9074677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C09F2ACA-462A-48F3-9734-2609E4E8282C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C09F2ACA-462A-48F3-9734-2609E4E8282C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C09F2ACA-462A-48F3-9734-2609E4E8282C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C09F2ACA-462A-48F3-9734-2609E4E8282C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FB2A47-F8DA-4A06-A59B-2FBE78653F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FB2A47-F8DA-4A06-A59B-2FBE78653F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FB2A47-F8DA-4A06-A59B-2FBE78653F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FB2A47-F8DA-4A06-A59B-2FBE78653F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214ED264-DA92-4815-B2B5-0D2F49C4ACAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214ED264-DA92-4815-B2B5-0D2F49C4ACAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214ED264-DA92-4815-B2B5-0D2F49C4ACAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214ED264-DA92-4815-B2B5-0D2F49C4ACAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA013719-BF7C-4AD3-8744-26BF44282560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA013719-BF7C-4AD3-8744-26BF44282560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA013719-BF7C-4AD3-8744-26BF44282560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA013719-BF7C-4AD3-8744-26BF44282560}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4A6D2F3-65C4-423C-A1C5-7CA2F3AE215A}
+	EndGlobalSection
+EndGlobal

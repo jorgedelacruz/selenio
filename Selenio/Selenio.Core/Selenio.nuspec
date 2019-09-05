@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Selenio</id>
+    <version>0.0.0.0</version>
+    <title>Selenio</title>
+    <authors>Jorge de la Cruz</authors>
+    <owners>Jorge de la Cruz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a straight forward implementation of a simple Selenium framework, designed to promote the use of the Page Object pattern.</description>
+    <tags>selenium webdriver page-object-model pom</tags>
+    <dependencies>
+      <dependency id="Selenium.Support" version="3.7.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Selenio.Core.dll" target="lib\net452\Selenio.Core.dll" />
+  </files>
+</package>
+
+<!--nuget pack Selenio.Core\Selenio.nuspec -OutputDirectory C:\nuget-->

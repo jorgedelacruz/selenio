@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Selenio.HtmlReporter</id>
+    <version>0.1.7</version>
+    <title>Selenio.HtmlReporter</title>
+    <authors>Jorge de la Cruz</authors>
+    <owners>Jorge de la Cruz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>From the Selenio project. Plug this HTML reporter to generate rich step-by-step reports in your test executions.</description>
+    <releaseNotes>
+      v0.1.7:
+      - Bug fixes.
+    </releaseNotes>
+    <tags>selenium webdriver page-object-model pom selenio extensions html-reporter reports reporting html web-element</tags>
+    <dependencies>
+      <dependency id="Selenio" version="0.5.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Selenio.HtmlReporter.dll" target="lib\net452\Selenio.HtmlReporter.dll" />
+  </files>
+</package>
+
+<!--nuget pack Selenio.HtmlReporter\Selenio.HtmlReporter.nuspec -OutputDirectory C:\nuget-->

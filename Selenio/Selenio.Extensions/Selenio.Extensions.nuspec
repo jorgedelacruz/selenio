@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Selenio.Extensions</id>
+    <version>0.2.4</version>
+    <title>Selenio.Extensions</title>
+    <authors>Jorge de la Cruz</authors>
+    <owners>Jorge de la Cruz</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>From the Selenio project. Adds the Selenio.Extensions namespace with Web Driver, Page Object and Web Element extension methods.</description>
+    <releaseNotes>
+      v0.2.4: Version sync with Selenio 0.5.3.
+    </releaseNotes>
+    <tags>selenium webdriver page-object-model pom selenio extensions web-element</tags>
+    <dependencies>
+      <dependency id="Selenio" version="0.5.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\Selenio.Extensions.dll" target="lib\net452\Selenio.Extensions.dll" />
+  </files>
+</package>
+
+<!--nuget pack Selenio.Extensions\Selenio.Extensions.nuspec -OutputDirectory C:\nuget-->
